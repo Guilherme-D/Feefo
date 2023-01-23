@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:feefo
+    driver-class-name: org.h2.Driver
+    username: root
+    password: root
+    initialization-mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+  flyway:
+    url: jdbc:h2:mem:feefo
+    user: root
+    password: root
+    locations:
+      - "classpath:db/migration/"

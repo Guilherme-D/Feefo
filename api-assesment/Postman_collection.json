@@ -1,0 +1,755 @@
+{
+	"info": {
+		"_postman_id": "e64adabf-e72a-4a03-a88f-11bf2bdbae2f",
+		"name": "Api Documentation",
+		"description": "Api Documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25451705"
+	},
+	"item": [
+		{
+			"name": "job-title",
+			"item": [
+				{
+					"name": "Reactivate job title",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/job-title/activate-job?title=testing",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"job-title",
+								"activate-job"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "testing",
+									"description": "The title to be reactivated"
+								}
+							]
+						},
+						"description": "Reactivate previous deleted job title"
+					},
+					"response": [
+						{
+							"name": "Closest title found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/job-title/activate-job?title=nisi eu",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"job-title",
+										"activate-job"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "nisi eu"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"createdAt\": \"1981-09-29T01:11:44.486Z\",\n  \"deletedAt\": \"1969-03-05T06:55:59.410Z\",\n  \"jobId\": -9912120,\n  \"title\": \"ullamco aute ut laboris\",\n  \"updatedAt\": \"1986-05-30T15:22:02.218Z\"\n}"
+						},
+						{
+							"name": "No active job title founded to update",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/job-title/activate-job?title=nisi eu",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"job-title",
+										"activate-job"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "nisi eu"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Create new job title",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/job-title/create-job?input=test",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"job-title",
+								"create-job"
+							],
+							"query": [
+								{
+									"key": "input",
+									"value": "test",
+									"description": "The job title to be saved"
+								}
+							]
+						},
+						"description": "Save new job title to database to use as normalized"
+					},
+					"response": [
+						{
+							"name": "Closest title found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/job-title/create-job?input=nisi eu",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"job-title",
+										"create-job"
+									],
+									"query": [
+										{
+											"key": "input",
+											"value": "nisi eu"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"createdAt\": \"1981-09-29T01:11:44.486Z\",\n  \"deletedAt\": \"1969-03-05T06:55:59.410Z\",\n  \"jobId\": -9912120,\n  \"title\": \"ullamco aute ut laboris\",\n  \"updatedAt\": \"1986-05-30T15:22:02.218Z\"\n}"
+						},
+						{
+							"name": "Job title already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/job-title/create-job?input=nisi eu",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"job-title",
+										"create-job"
+									],
+									"query": [
+										{
+											"key": "input",
+											"value": "nisi eu"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Delete job title",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/job-title/delete-job?input=testing",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"job-title",
+								"delete-job"
+							],
+							"query": [
+								{
+									"key": "input",
+									"value": "testing",
+									"description": "The job title to be deleted"
+								}
+							]
+						},
+						"description": "Delete previous saved job title"
+					},
+					"response": [
+						{
+							"name": "Job title deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/job-title/delete-job?input=nisi eu",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"job-title",
+										"delete-job"
+									],
+									"query": [
+										{
+											"key": "input",
+											"value": "nisi eu"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"createdAt\": \"1981-09-29T01:11:44.486Z\",\n  \"deletedAt\": \"1969-03-05T06:55:59.410Z\",\n  \"jobId\": -9912120,\n  \"title\": \"ullamco aute ut laboris\",\n  \"updatedAt\": \"1986-05-30T15:22:02.218Z\"\n}"
+						},
+						{
+							"name": "No job title to delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/job-title/delete-job?input=nisi eu",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"job-title",
+										"delete-job"
+									],
+									"query": [
+										{
+											"key": "input",
+											"value": "nisi eu"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Get the normalized title",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/job-title/normalized-title?input=tes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"job-title",
+								"normalized-title"
+							],
+							"query": [
+								{
+									"key": "input",
+									"value": "tes",
+									"description": "The inputted value to be normalized"
+								}
+							]
+						},
+						"description": "Get the normalized title calculated using the Levenshtein distance"
+					},
+					"response": [
+						{
+							"name": "Closest title found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/job-title/normalized-title?input=nisi eu",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"job-title",
+										"normalized-title"
+									],
+									"query": [
+										{
+											"key": "input",
+											"value": "nisi eu"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "nisi eu"
+						},
+						{
+							"name": "Invalid input value",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/job-title/normalized-title?input=nisi eu",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"job-title",
+										"normalized-title"
+									],
+									"query": [
+										{
+											"key": "input",
+											"value": "nisi eu"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "There is no job title saved",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/job-title/normalized-title?input=nisi eu",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"job-title",
+										"normalized-title"
+									],
+									"query": [
+										{
+											"key": "input",
+											"value": "nisi eu"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Search job titles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/job-title/search-active-job?getDeleted=false&input=&page=0&size=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"job-title",
+								"search-active-job"
+							],
+							"query": [
+								{
+									"key": "getDeleted",
+									"value": "false",
+									"description": "set true if also wants to return the deleted job titles"
+								},
+								{
+									"key": "input",
+									"value": "",
+									"description": "The substring of a title to be founded"
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"description": "The page to be retrieve"
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"description": "The number of objects to be returned by page"
+								}
+							]
+						},
+						"description": "Search paginated list of job titles deleted or not"
+					},
+					"response": [
+						{
+							"name": "List of paginated Job titles founded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/job-title/search-active-job?getDeleted=false&input=nisi eu&page=0&size=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"job-title",
+										"search-active-job"
+									],
+									"query": [
+										{
+											"key": "getDeleted",
+											"value": "false"
+										},
+										{
+											"key": "input",
+											"value": "nisi eu"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"createdAt\": \"1981-09-29T01:11:44.486Z\",\n  \"deletedAt\": \"1969-03-05T06:55:59.410Z\",\n  \"jobId\": -9912120,\n  \"title\": \"ullamco aute ut laboris\",\n  \"updatedAt\": \"1986-05-30T15:22:02.218Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update job title",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"newTitle\": \"testing\",\n  \"title\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/job-title/update-job",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"job-title",
+								"update-job"
+							]
+						},
+						"description": "Update previous saved job title"
+					},
+					"response": [
+						{
+							"name": "Job title updated",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"newTitle\": \"pariatur consequat\",\n  \"title\": \"ipsum ullamco sit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/job-title/update-job",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"job-title",
+										"update-job"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"createdAt\": \"1981-09-29T01:11:44.486Z\",\n  \"deletedAt\": \"1969-03-05T06:55:59.410Z\",\n  \"jobId\": -9912120,\n  \"title\": \"ullamco aute ut laboris\",\n  \"updatedAt\": \"1986-05-30T15:22:02.218Z\"\n}"
+						},
+						{
+							"name": "No active job title found to update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"newTitle\": \"pariatur consequat\",\n  \"title\": \"ipsum ullamco sit\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/job-title/update-job",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"job-title",
+										"update-job"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Calculate the Levenshtein distance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"input\": \"test\",\n  \"title\": \"testing\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/calculate-distance",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"calculate-distance"
+					]
+				},
+				"description": "Calculate the Levenshtein distance, normalizing the value between 0 and 1"
+			},
+			"response": [
+				{
+					"name": "the calculated value of Levenshtein distance",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"input\": \"do aliqua in quis\",\n  \"title\": \"nostrud incididunt\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/calculate-distance",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"calculate-distance"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "-71515120.45040445"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

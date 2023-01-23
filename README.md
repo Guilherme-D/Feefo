@@ -1,6 +1,9 @@
 # General observations
 
-* Need to finish the tests
+> Never worked with react, but did the best I could =)
+
+* need to finalize the tests for the API and UI
+* The a11y and relevant ARIA attributes was not implementated in UI assessment
 * Figma does not have responsive screens, but the difference would be in the left menu that would be hidden
 
 # High-level design

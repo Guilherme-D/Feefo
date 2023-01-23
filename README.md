@@ -1,6 +1,9 @@
-# High-level design
+# General observations
 
----
+* Need to finish the tests
+* Figma does not have responsive screens, but the difference would be in the left menu that would be hidden
+
+# High-level design
 
 #### This web app will allow the user manage notes when he is logged in, and will follow the above rules.
 
@@ -38,8 +41,6 @@
 
 # Wireframe
 
----
-
 When responsive, the list of notes will be a lateral menu, but all the buttons will keep the same
 
 Available on figma
@@ -48,8 +49,6 @@ Available on figma
 
 
 # Data modeling
-
----
 
 There will be two tables, one for the users and another for notes.
 
@@ -71,7 +70,7 @@ Name – Max of 255 characteres, and can not be null
 
 # Restful API:
 
----
+
 
 ## Authentication:
 

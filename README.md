@@ -44,7 +44,7 @@ When responsive, the list of notes will be a lateral menu, but all the buttons w
 
 Available on figma
 
->https://www.figma.com/file/ysH5L0bjvt2FP5JUldEK1P/Feefo-Note-App?node-id=7%3A375&t=R43jfCZUnNAhGkg0-0
+>https://www.figma.com/file/ysH5L0bjvt2FP5JUldEK1P/Feefo-Note-App?node-id=2%3A2&t=7gcpM4PIMvcnoe4W-1
 
 
 # Data modeling
